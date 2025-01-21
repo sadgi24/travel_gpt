@@ -30,6 +30,7 @@ target 'travelgpt' do
       'ios'
     ]
   end
+  pod 'RNFS', :path => '../node_modules/react-native-fs'
 
   config = use_native_modules!(config_command)
 

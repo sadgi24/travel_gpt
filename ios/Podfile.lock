@@ -1,5 +1,7 @@
 PODS:
   - boost (1.84.0)
+  - BVLinearGradient (2.8.3):
+    - React-Core
   - DoubleConversion (1.1.6)
   - EXConstants (17.0.4):
     - ExpoModulesCore
@@ -1277,6 +1279,50 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
+  - react-native-audio-waveform (2.1.2):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.01.01.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
+  - react-native-safe-area-context (5.1.0):
+    - React-Core
+  - react-native-slider (4.5.5):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.01.01.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
   - React-nativeconfig (0.76.6)
   - React-NativeModulesApple (0.76.6):
     - glog
@@ -1544,11 +1590,176 @@ PODS:
     - React-logger (= 0.76.6)
     - React-perflogger (= 0.76.6)
     - React-utils (= 0.76.6)
+  - RNAudioRecorderPlayer (3.6.12):
+    - React-Core
+  - RNFS (2.20.0):
+    - React-Core
+  - RNGestureHandler (2.22.0):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.01.01.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
+  - RNPermissions (5.2.3):
+    - React-Core
+  - RNReanimated (3.16.7):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.01.01.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - RNReanimated/reanimated (= 3.16.7)
+    - RNReanimated/worklets (= 3.16.7)
+    - Yoga
+  - RNReanimated/reanimated (3.16.7):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.01.01.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - RNReanimated/reanimated/apple (= 3.16.7)
+    - Yoga
+  - RNReanimated/reanimated/apple (3.16.7):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.01.01.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
+  - RNReanimated/worklets (3.16.7):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.01.01.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
+  - RNScreens (4.5.0):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.01.01.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-RCTImage
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
+  - RNSound (0.11.2):
+    - React-Core
+    - RNSound/Core (= 0.11.2)
+  - RNSound/Core (0.11.2):
+    - React-Core
+  - RNSVG (15.11.1):
+    - React-Core
+  - RNVectorIcons (10.2.0):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.01.01.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
   - SocketRocket (0.7.1)
   - Yoga (0.0.0)
 
 DEPENDENCIES:
   - boost (from `../node_modules/react-native/third-party-podspecs/boost.podspec`)
+  - BVLinearGradient (from `../node_modules/react-native-linear-gradient`)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - EXConstants (from `../node_modules/expo-constants/ios`)
   - Expo (from `../node_modules/expo`)
@@ -1592,6 +1803,9 @@ DEPENDENCIES:
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - React-Mapbuffer (from `../node_modules/react-native/ReactCommon`)
   - React-microtasksnativemodule (from `../node_modules/react-native/ReactCommon/react/nativemodule/microtasks`)
+  - "react-native-audio-waveform (from `../node_modules/@simform_solutions/react-native-audio-waveform`)"
+  - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
+  - "react-native-slider (from `../node_modules/@react-native-community/slider`)"
   - React-nativeconfig (from `../node_modules/react-native/ReactCommon`)
   - React-NativeModulesApple (from `../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
@@ -1619,6 +1833,15 @@ DEPENDENCIES:
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCodegen (from `build/generated/ios`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - RNAudioRecorderPlayer (from `../node_modules/react-native-audio-recorder-player`)
+  - RNFS (from `../node_modules/react-native-fs`)
+  - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+  - RNPermissions (from `../node_modules/react-native-permissions`)
+  - RNReanimated (from `../node_modules/react-native-reanimated`)
+  - RNScreens (from `../node_modules/react-native-screens`)
+  - RNSound (from `../node_modules/react-native-sound`)
+  - RNSVG (from `../node_modules/react-native-svg`)
+  - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -1628,6 +1851,8 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   boost:
     :podspec: "../node_modules/react-native/third-party-podspecs/boost.podspec"
+  BVLinearGradient:
+    :path: "../node_modules/react-native-linear-gradient"
   DoubleConversion:
     :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
   EXConstants:
@@ -1711,6 +1936,12 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   React-microtasksnativemodule:
     :path: "../node_modules/react-native/ReactCommon/react/nativemodule/microtasks"
+  react-native-audio-waveform:
+    :path: "../node_modules/@simform_solutions/react-native-audio-waveform"
+  react-native-safe-area-context:
+    :path: "../node_modules/react-native-safe-area-context"
+  react-native-slider:
+    :path: "../node_modules/@react-native-community/slider"
   React-nativeconfig:
     :path: "../node_modules/react-native/ReactCommon"
   React-NativeModulesApple:
@@ -1765,11 +1996,30 @@ EXTERNAL SOURCES:
     :path: build/generated/ios
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNAudioRecorderPlayer:
+    :path: "../node_modules/react-native-audio-recorder-player"
+  RNFS:
+    :path: "../node_modules/react-native-fs"
+  RNGestureHandler:
+    :path: "../node_modules/react-native-gesture-handler"
+  RNPermissions:
+    :path: "../node_modules/react-native-permissions"
+  RNReanimated:
+    :path: "../node_modules/react-native-reanimated"
+  RNScreens:
+    :path: "../node_modules/react-native-screens"
+  RNSound:
+    :path: "../node_modules/react-native-sound"
+  RNSVG:
+    :path: "../node_modules/react-native-svg"
+  RNVectorIcons:
+    :path: "../node_modules/react-native-vector-icons"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
   boost: 1dca942403ed9342f98334bf4c3621f011aa7946
+  BVLinearGradient: 880f91a7854faff2df62518f0281afb1c60d49a3
   DoubleConversion: f16ae600a246532c4020132d54af21d0ddb2a385
   EXConstants: cc788e18fb962b77999c16f6b90e551542b1bcf4
   Expo: 377cc60ce8c9030cf52e36987ab3ce099ab9006e
@@ -1811,6 +2061,9 @@ SPEC CHECKSUMS:
   React-logger: 162c09cc432b02d4a0db31b1d98f6df5243a2679
   React-Mapbuffer: f760d2229640be48cb3c2d4832b5bbc3018123fc
   React-microtasksnativemodule: c7beb09cf9c61d18b24b51db99ac026796035bb3
+  react-native-audio-waveform: 5f74b6cb72c618a4c18851e035345c15caededd2
+  react-native-safe-area-context: 04803a01f39f31cc6605a5531280b477b48f8a88
+  react-native-slider: 4a0f3386a38fc3d2d955efc515aef7096f7d1ee4
   React-nativeconfig: 539ff4de6ce3b694e8e751080568c281c84903ce
   React-NativeModulesApple: 771cc40b086281b820fe455fedebbe4341fd0c90
   React-perflogger: 4e80a5b8d61dfb38024e7d5b8efaf9ce1037d31f
@@ -1838,9 +2091,18 @@ SPEC CHECKSUMS:
   React-utils: e6697b03f21c7ac57b075d848cda7882662cabf7
   ReactCodegen: 484b223748d7489d7036db1cbf79896d297e33a7
   ReactCommon: 832cdd669aeecd430d9ca1975d15676b38d0b263
+  RNAudioRecorderPlayer: 224c7de87722938aedce04000d09baa633148f5b
+  RNFS: 4ac0f0ea233904cb798630b3c077808c06931688
+  RNGestureHandler: 9decfddf99dcf2397b50c9adae0188fc84c74231
+  RNPermissions: badce095c58d6b99ca89255ccd043e45d651d867
+  RNReanimated: 849c4bfc1a185b123ca9a89f2a98d679b3d79b4e
+  RNScreens: b51f1a8be0dd7bb470b757f6cca8ba878acb2000
+  RNSound: 6c156f925295bdc83e8e422e7d8b38d33bc71852
+  RNSVG: 3271d86d99e0ff3bc1c6cb74f894bab06a261969
+  RNVectorIcons: 6382277afab3c54658e9d555ee0faa7a37827136
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
   Yoga: 2a5ae8f7db3c675ff5a781fb5d99c5f7a5d2fc11
 
-PODFILE CHECKSUM: ddbbc77c2ae4e90756d4b3af13c205299513ee83
+PODFILE CHECKSUM: 2196896166e3a08adc95660087597ea41a16f689
 
 COCOAPODS: 1.16.2
