@@ -7,6 +7,8 @@ import {
   ScrollView,
   SafeAreaView,
   StyleSheet,
+  StatusBar,
+  PermissionsAndroid,Platform
 } from 'react-native';
 import AudioRecorderPlayer from 'react-native-audio-recorder-player';
 import AudioMessage from './AudioComponent';
@@ -14,6 +16,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Octicons from 'react-native-vector-icons/Octicons';
+import RNFS from 'react-native-fs';
 
 const audioRecorderPlayer = new AudioRecorderPlayer();
 
@@ -25,6 +28,46 @@ const Messaging = () => {
   const [timer, setTimer] = useState(0);
   const timerRef = useRef(null);
 
+  const requestPermissions = async () => {
+    if (Platform.OS === 'android') {
+      try {
+        const permissions = [];
+  
+        // Permissions for Android 12 and below
+        if (Platform.Version < 33) {
+          permissions.push(PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE);
+          permissions.push(PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE);
+        } else {
+          // Permissions for Android 13+
+          permissions.push(PermissionsAndroid.PERMISSIONS.READ_MEDIA_AUDIO);
+        }
+  
+        permissions.push(PermissionsAndroid.PERMISSIONS.RECORD_AUDIO);
+  
+        const granted = await PermissionsAndroid.requestMultiple(permissions);
+  
+        if (
+          granted[PermissionsAndroid.PERMISSIONS.RECORD_AUDIO] === PermissionsAndroid.RESULTS.GRANTED &&
+          (Platform.Version < 33
+            ? granted[PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE] === PermissionsAndroid.RESULTS.GRANTED &&
+              granted[PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE] === PermissionsAndroid.RESULTS.GRANTED
+            : granted[PermissionsAndroid.PERMISSIONS.READ_MEDIA_AUDIO] === PermissionsAndroid.RESULTS.GRANTED)
+        ) {
+          console.log('All permissions granted');
+        } else {
+          console.error('One or more permissions denied');
+        }
+      } catch (err) {
+        console.error('Failed to request permissions:', err);
+      }
+    }
+  };
+  
+  useEffect(() => {
+    if (Platform.OS === 'android') {
+      requestPermissions();
+    }
+  }, []);
   useEffect(() => {
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
@@ -58,7 +101,12 @@ const Messaging = () => {
 
   const startRecording = async () => {
     try {
-      await audioRecorderPlayer.startRecorder();
+        const path = Platform.OS === 'android' 
+      ? `${RNFS.ExternalDirectoryPath}/audio_record.mp3` // Android path
+      : `${RNFS.DocumentDirectoryPath}/audio_record.mp3`; // iOS path
+    
+      await audioRecorderPlayer.startRecorder(path);
+
       setRecording(true);
       setTimer(0);
       timerRef.current = setInterval(() => setTimer((prev) => prev + 1), 1000);
@@ -68,8 +116,9 @@ const Messaging = () => {
   };
 
   const stopRecording = async () => {
-    try {
+    try { 
       const result = await audioRecorderPlayer.stopRecorder();
+      console.log(result,'result')
       setRecording(false);
       setRecordedFile(result);
       if (timerRef.current) {
@@ -95,6 +144,7 @@ const Messaging = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+        <StatusBar backgroundColor={'transparent'} barStyle={'dark-content'}/>
       <View style={styles.header}>
         <Icon name="menu" size={24} color="#000" />
         <Text style={styles.title}>Travel GPT</Text>
@@ -190,7 +240,7 @@ const Messaging = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    // backgroundColor: '#fff',
     marginHorizontal:20
   },
   header: {

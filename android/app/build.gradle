@@ -152,6 +152,7 @@ dependencies {
     def isGifEnabled = (findProperty('expo.gif.enabled') ?: "") == "true";
     def isWebpEnabled = (findProperty('expo.webp.enabled') ?: "") == "true";
     def isWebpAnimatedEnabled = (findProperty('expo.webp.animated') ?: "") == "true";
+    implementation project(':react-native-fs')
 
     if (isGifEnabled) {
         // For animated gif support
@@ -172,6 +173,6 @@ dependencies {
     } else {
         implementation jscFlavor
     }
-implementation project(':react-native-audio-recorder-player')
+// implementation project(':react-native-audio-recorder-player')
 
 }

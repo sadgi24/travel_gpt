@@ -1,5 +1,4 @@
 package com.travelgpt
-import com.rnfs.RNFSPackage;  
 import android.os.Build
 import android.os.Bundle
 
@@ -9,7 +8,7 @@ import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnable
 import com.facebook.react.defaults.DefaultReactActivityDelegate
 
 import expo.modules.ReactActivityDelegateWrapper
-
+import com.rnfs.RNFSPackage;
 class MainActivity : ReactActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     // Set the theme to AppTheme BEFORE onCreate to support

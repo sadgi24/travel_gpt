@@ -5,20 +5,43 @@ import {
   TouchableOpacity,
   StyleSheet,
   Dimensions,
+  Platform,
 } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import Sound from "react-native-sound";
+import RNFS from 'react-native-fs';
+
 import { Waveform } from '@simform_solutions/react-native-audio-waveform'; // Correct import for the waveform
+// let formattedPath=''
+// RNFSPackage()
 
 const AudioMessage = ({ filePath,type }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
-  const [audioDuration, setAudioDuration] = useState(0); // Dynamic audio duration
+  const [audioDuration, setAudioDuration] = useState(0.0); // Dynamic audio duration
   const [sound, setSound] = useState(null); // Store Sound instance
-  const waveformRef = useRef(null);
+  const [formattedPath, setformattedPath] = useState(null); // Store Sound instance
 
+
+  const waveformRef = useRef(null);
   useEffect(() => {
-    const audio = new Sound(filePath, null, (error) => {
+    if(Platform.OS=='android'){
+
+    let  formattedPath = filePath.replace("file://", "");
+    setformattedPath(formattedPath)
+      console.log(formattedPath,'formattedPath',filePath)
+      const audio = new Sound(filePath, null, (error) => {
+        if (error) {
+          console.log("Failed to load the sound:", error);
+          return;
+        }
+        console.log("Audio duration:", audio.getDuration());
+        setAudioDuration(audio.getDuration());
+        setSound(audio);
+      });
+      
+    }
+   else{ const audio = new Sound(filePath, null, (error) => {
       if (error) {
         console.log("Failed to load the sound", error);
         return;
@@ -28,9 +51,9 @@ const AudioMessage = ({ filePath,type }) => {
       let duration = audio.getDuration();
       setAudioDuration(duration);
     });
-
+console.log(audio,'audio')
     setSound(audio);
-
+  }
     return () => {
       // Release the sound instance when the component unmounts
       if (sound) {
@@ -87,14 +110,16 @@ const AudioMessage = ({ filePath,type }) => {
 
       {/* Waveform */}
       <View style={styles.waveformContainer}>
-        <Waveform
-          mode="static"
-          ref={waveformRef} // Correct ref
-          path={filePath} // Path to the audio file
-          candleSpace={2}
-          candleWidth={4}
-          scrubColor="white"
-        />
+      <Waveform
+  mode="static"
+  ref={waveformRef}
+  path={`${RNFS.ExternalDirectoryPath}/audio_record.mp3`}//{Platform.OS === "android" ? formattedPath : filePath}
+  candleSpace={2}
+  candleWidth={4}
+  scrubColor="white"
+/>
+
+
       </View>
 
       {/* Timer */}

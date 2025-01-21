@@ -15,7 +15,7 @@ import com.facebook.soloader.SoLoader
 
 import expo.modules.ApplicationLifecycleDispatcher
 import expo.modules.ReactNativeHostWrapper
-import package com.dooboolab.audiorecorderplayer.RNAudioRecorderPlayerPackage
+import com.dooboolab.audiorecorderplayer.RNAudioRecorderPlayerPackage
 class MainApplication : Application(), ReactApplication {
 
   override val reactNativeHost: ReactNativeHost = ReactNativeHostWrapper(
@@ -24,7 +24,6 @@ class MainApplication : Application(), ReactApplication {
           override fun getPackages(): List<ReactPackage> {
             val packages = PackageList(this).packages
             // Packages that cannot be autolinked yet can be added manually here, for example:
-            packages.add(new RNAudioRecorderPlayerPackage());
              
             return packages
           }
