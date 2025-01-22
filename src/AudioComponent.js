@@ -10,10 +10,8 @@ import {
 import Icon from "react-native-vector-icons/Ionicons";
 import Sound from "react-native-sound";
 import RNFS from 'react-native-fs';
-
 import { Waveform } from '@simform_solutions/react-native-audio-waveform'; // Correct import for the waveform
-// let formattedPath=''
-// RNFSPackage()
+
 
 const AudioMessage = ({ filePath,type }) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -111,21 +109,16 @@ console.log(audio,'audio')
       {/* Waveform */}
       <View style={styles.waveformContainer}>
       <Waveform
-  mode="static"
-  ref={waveformRef}
-  path={`${RNFS.ExternalDirectoryPath}/audio_record.mp3`}//{Platform.OS === "android" ? formattedPath : filePath}
-  candleSpace={2}
-  candleWidth={4}
-  scrubColor="white"
-/>
-
-
+        mode="static"
+        ref={waveformRef}
+        path={Platform.OS === "android" ? `${RNFS.ExternalDirectoryPath}/audio_record.mp3`:filePath}
+        candleSpace={2}
+        candleWidth={4}
+        scrubColor="white"
+      />
       </View>
-
       {/* Timer */}
-      <Text style={styles.timer}>
-        {formatTime(remainingTime)} 
-      </Text>
+      <Text style={styles.timer}>{formatTime(remainingTime)}</Text>
     </View>
   );
 };

@@ -101,14 +101,20 @@ const Messaging = () => {
 
   const startRecording = async () => {
     try {
-        const path = Platform.OS === 'android' 
-      ? `${RNFS.ExternalDirectoryPath}/audio_record.mp3` // Android path
-      : `${RNFS.DocumentDirectoryPath}/audio_record.mp3`; // iOS path
-    
-      await audioRecorderPlayer.startRecorder(path);
-
-      setRecording(true);
-      setTimer(0);
+        if(Platform.OS==='android'){
+            const path = `${RNFS.ExternalDirectoryPath}/audio_record.mp3` // Android path
+            await audioRecorderPlayer.startRecorder(path);
+      
+            setRecording(true);
+            setTimer(0);
+        }
+       else{
+      
+        await audioRecorderPlayer.startRecorder();
+        setRecording(true);
+        setTimer(0);
+        timerRef.current = setInterval(() => setTimer((prev) => prev + 1), 1000);
+       }
       timerRef.current = setInterval(() => setTimer((prev) => prev + 1), 1000);
     } catch (err) {
       console.error('Error starting recording:', err);
